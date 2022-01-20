@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 main()
@@ -6,19 +7,24 @@ main()
 
 float height, weight, BMI;
 
-cout<<"BMI CALCULATOR"<<endl;
+cout<<"BMI CALCULATOR\n"<<endl;
 cout<<"What is your height in meters?"<<endl;
 
 while (true)
 {
     cin>>height;
 
-    if (height<0.5) {
-        cout<<"Children don't need to measure their BMI!"<<endl;
+    if(!cin) {
+        cout <<endl<<"Invalid value. Please input a valid number for your height."<<endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); }
+
+    else if (height<0.5) {
+        cout<<endl<<"Children don't need to measure their BMI!"<<endl;
         cout<<"Please input your height in meters again."<<endl; }
 
     else if (height>=3.0) {
-        cout<<"Yer a giant, Harry!"<<endl;
+        cout<<endl<<"Yer a giant, Harry!"<<endl;
         cout<<"Please input your height in meters again."<<endl; }
 
     else
@@ -26,19 +32,30 @@ while (true)
 }
 
 if (height>=2.0) {
-    cout<<"You're tall!"<<endl; }
+    cout<<endl<<"You're tall!"<<endl; }
 
-cout<<"What is your weight?"<<endl;
-    cin>>weight;
+cout<<endl<<"What is your weight?"<<endl;
+
+    while (true) {
+        cin>>weight;
+
+        if (!cin) {
+            cout<<endl<<"Invalid value. Please input a valid number for your weight."<<endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); }
+
+        else
+            break;
+   }
 
 BMI=weight/(height*height);
 
-cout<<"Your BMI is: "<<BMI<<endl;
+cout<<endl<<"Your BMI is: "<<BMI<<endl;
 
 if (BMI<18.5) {
     cout<<"Underweight"<<endl;
     cout<<"Associated health risks: Moderate"<<endl; }
-    
+
 if (BMI>=18.5 && BMI<=24.9) {
     cout<<"Normal"<<endl;
     cout<<"Associated health risks: Low"<<endl; }
