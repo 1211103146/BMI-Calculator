@@ -8,7 +8,7 @@ main()
 float height, weight, BMI;
 
 cout<<"BMI CALCULATOR\n"<<endl;
-cout<<"Disclaimer: BMI is not an accurate measure of a person's health nor does it determine whether one has a health issue. It merely serves as a general guideline. Please consult a medical professional if there are any concerns regarding your health for more information."<<endl;
+cout<<"Disclaimer: BMI is not an accurate measure of a person's health nor does it determine whether one has a health issue. It merely serves as a general guideline. Please consult a medical professional if there are any concerns regarding your health for more information."<<endl<<endl;
 cout<<"What is your height in meters?"<<endl;
 
 while (true)
